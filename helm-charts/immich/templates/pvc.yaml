@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: library-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce  # Define the access mode for the volume
+  resources:
+    requests:
+      storage: 10Gi  # Specify the storage size (e.g., 10Gi)
+  storageClassName: "standard"  # Optional: specify a storage class (depends on your environment)
