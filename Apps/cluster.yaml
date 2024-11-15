@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster
+  namespace: argocd
+spec:
+  project: cluster
+  source:
+    repoURL: https://github.com/your-repo/your-charts-repository.git  # Replace with your repo URL
+    targetRevision: main  # or a specific branch/tag
+    path: helm-charts-folder  # Path to the folder containing Helm charts
+    helm:
+      valueFiles:
+        - values.yaml  # Optional: specify values files if required
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  # The Kubernetes namespace to deploy to
+  syncPolicy:
+    automated:
+      prune: true  # Automatically delete resources that are no longer defined
+      selfHeal: true  # Automatically sync if resources drift
+    syncOptions:
+      - CreateNamespace=true  # Optional: Automatically create namespaces if they don't exist

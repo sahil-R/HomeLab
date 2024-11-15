@@ -1,0 +1,1 @@
+gcloud certificate-manager certificates create related-primesearches-net --domains="related.primesearches.net"
