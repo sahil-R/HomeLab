@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/sahil-R/HomeLab.git
-    path: helm-charts/kubernetes-ingress
+    path: helm-charts/ingress-nginx
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
