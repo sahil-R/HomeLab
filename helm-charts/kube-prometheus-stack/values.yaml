@@ -2131,7 +2131,7 @@ prometheusOperator:
       serviceAccount:
         automountServiceAccountToken: false
         create: true
-        name: ""
+        name: "kps-service-account"
 
       ## Configuration for Prometheus operator Webhook service
       ##
