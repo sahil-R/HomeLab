@@ -2308,6 +2308,8 @@ prometheusOperator:
 
     patch:
       enabled: true
+      serviceAccount:
+        create: true
       image:
         registry: registry.k8s.io
         repository: ingress-nginx/kube-webhook-certgen
